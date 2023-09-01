@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FoodController;
+ 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::resource('foodtest', FoodController::class);
 
 Route::get('/', function () {
     return view('car.index');
@@ -97,5 +101,10 @@ Route::get('/foods_h3', function () {
 Route::get('/foods_h4', function () {
     return view('food.h4');
 })->name('foods.h4');
+
+
+Route::get('/layouts', function () {
+    return view('child');
+})->name('child');
 
 
